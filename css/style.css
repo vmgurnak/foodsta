@@ -375,6 +375,14 @@ body {
 
 .hero {
   padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero {
+    padding-bottom: 0;
+    margin-bottom: -108px;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
@@ -519,22 +527,29 @@ body {
 /* ----------- OFFERING ----------- */
 
 .offering {
-  background-image: url(../image/offerings/apple-mob.png),
-    url(../image/offerings/img-bgr-mob.png);
+  background-image: url(../image/offerings/apple-mob.webp),
+    url(../image/offerings/img-bgr-mob.webp);
   background-repeat: no-repeat;
   background-position: 50% 41px, 50% 0%;
-  background-size: 280px, cover;
-  /* background-size: contain; */
-  /* background-size: 100%; */
+  background-size: 280px, 480px;
 
-  /* padding-top: 41px; */
   padding-top: 410px;
   padding-bottom: 72px;
 }
-.offering-container {
-  /* padding-top: 410px; */
-  /* padding-bottom: 72px; */
 
+@media only screen and (min-width: 768px) {
+  .offering {
+    background-image: url(../image/offerings/apple-tab.webp),
+      url(../image/offerings/img-bgr-tablet.webp);
+    background-size: 704px, 768px;
+
+    padding-top: 604px;
+    padding-bottom: 88px;
+    background-position: 50% 150px, 50% 0%;
+  }
+}
+
+.offering-container {
   outline: 2px solid red;
   outline-offset: -2px;
 }
@@ -550,19 +565,62 @@ body {
   font-size: 28px;
   line-height: 1.18;
 }
+
+@media only screen and (min-width: 768px) {
+  .offering-title {
+    max-width: 526px;
+    margin-bottom: 20px;
+
+    font-size: 42px;
+    line-height: normal;
+  }
+}
+
 .offering-descr {
   margin-bottom: 28px;
 
   font-size: 14px;
   line-height: 1.43;
 }
+
+@media only screen and (min-width: 768px) {
+  .offering-descr {
+    max-width: 500px;
+    margin-bottom: 25px;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
 .offering-list {
   margin-bottom: 28px;
 }
+
+@media only screen and (min-width: 768px) {
+  .offering-list {
+    display: flex;
+    gap: 80px;
+
+    margin-bottom: 20px;
+  }
+}
+
 .offering-item {
 }
 
-.offering-item:first-child:before {
+@media only screen and (min-width: 768px) {
+  .offering-item:nth-child(1) {
+    max-width: 288px;
+  }
+
+  .offering-item:nth-child(2) {
+    max-width: 252px;
+  }
+}
+
+.offering-item:nth-child(1):before {
   content: '';
   width: 48px;
   height: 48px;
@@ -575,7 +633,7 @@ body {
   background-position: center;
 }
 
-.offering-item:last-child:before {
+.offering-item:nth-child(2):before {
   content: '';
   width: 48px;
   height: 48px;
@@ -590,6 +648,12 @@ body {
 
 .offering-item:not(:last-child) {
   margin-bottom: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .offering-item:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
 
 .offering-item-tittle {
@@ -624,13 +688,18 @@ body {
 }
 
 .offering-link {
+  position: relative;
   padding: 7px 17px 7px 0;
 
   font-weight: 400;
   font-size: 13.6667px;
   line-height: 1.5;
   color: var(--black);
+}
 
-  outline: 2px solid red;
-  outline-offset: -2px;
+.offering-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
